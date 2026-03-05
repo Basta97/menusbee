@@ -1,0 +1,33 @@
+/* Component-scoped styles */
+
+:host {
+    display: block;
+}
+
+/* Rounded QR preview container */
+.qr-preview-container canvas {
+    border-radius: 1rem;
+}
+
+/* Custom select arrow override (RTL) */
+select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%2371717a' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+    background-position: left 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+}
+
+/* Color input styling */
+input[type='color'] {
+    appearance: none;
+    border: none;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+    border-radius: 0.5rem;
+    border: none;
+}

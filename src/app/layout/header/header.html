@@ -1,0 +1,122 @@
+<!-- Top Contact & Social Bar -->
+<div class="bg-black text-white py-2 md:py-3 relative z-50">
+    <div
+        class="container mx-auto px-4 md:px-8 xl:px-16 flex justify-between items-center text-[0.8rem] md:text-[0.85rem]">
+
+        <div class="flex items-center font-medium">
+            <a href="tel:00201040991525" class="hover:text-mu-primary transition-colors" dir="ltr"> <span
+                    class="opacity-80 ml-1 hidden sm:inline">المبيعات: </span>
+                00201040991525</a>
+        </div>
+        <div class="flex items-center gap-1.5 md:gap-2">
+            <!-- Social Links (Inverted because background is black) -->
+            <a href="https://www.tiktok.com/@menusbee" target="_blank" rel="noopener noreferrer"
+                class="group hover:bg-white hover:scale-105 transition-all flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full"
+                aria-label="TikTok">
+                <img src="/images/tiktok_icon.svg"
+                    class="w-4 h-4 md:w-5 md:h-5 invert group-hover:invert-0 transition-all" alt="TikTok">
+            </a>
+            <a href="https://www.instagram.com/menusbee" target="_blank" rel="noopener noreferrer"
+                class="group hover:bg-white hover:scale-105 transition-all flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full"
+                aria-label="Instagram">
+                <img src="/images/instgram_icon.svg"
+                    class="w-4 h-4 md:w-5 md:h-5 invert group-hover:invert-0 transition-all" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/menusbee" target="_blank" rel="noopener noreferrer"
+                class="group hover:bg-white hover:scale-105 transition-all flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full"
+                aria-label="Facebook">
+                <img src="/images/facebook_icon.svg"
+                    class="w-4 h-4 md:w-5 md:h-5 invert group-hover:invert-0 transition-all" alt="Facebook">
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Main Navigation Bar -->
+<header class="bg-white shadow-[0_4px_30px_rgba(0,0,0,0.03)] sticky top-0 z-40 border-b border-mu-border/50">
+    <div class="container mx-auto px-4 md:px-8 xl:px-16 py-3 md:py-4 flex justify-between items-center relative">
+
+        <!-- Logo -->
+        <a href="/" class="shrink-0 flex items-center" aria-label="Menusbee Home">
+            <img src="/images/logo.png" alt="Menusbee Logo" class="h-10 md:h-12 lg:h-14 object-contain">
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <nav
+            class="hidden lg:flex items-center gap-4 xl:gap-6 text-[0.8rem] xl:text-[0.9rem] font-bold text-mu-dark mx-4">
+            <a routerLink="/qr-generator" routerLinkActive="text-mu-primary after:opacity-100"
+                [routerLinkActiveOptions]="{exact: true}"
+                class="hover:text-mu-primary transition-colors relative whitespace-nowrap after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[2px] after:bg-mu-primary after:opacity-0 hover:after:opacity-100 after:transition-opacity">انشاء
+                منيو الكتروني</a>
+            <a routerLink="/features" routerLinkActive="text-mu-primary after:opacity-100"
+                class="hover:text-mu-primary transition-colors relative whitespace-nowrap after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[2px] after:bg-mu-primary after:opacity-0 hover:after:opacity-100 after:transition-opacity">المميزات</a>
+            <a routerLink="/pricing" routerLinkActive="text-mu-primary after:opacity-100"
+                class="hover:text-mu-primary transition-colors relative whitespace-nowrap after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[2px] after:bg-mu-primary after:opacity-0 hover:after:opacity-100 after:transition-opacity">الباقات</a>
+            <a routerLink="/faq" routerLinkActive="text-mu-primary after:opacity-100"
+                class="hover:text-mu-primary transition-colors relative whitespace-nowrap after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[2px] after:bg-mu-primary after:opacity-0 hover:after:opacity-100 after:transition-opacity">الاسئلة
+                الشائعة</a>
+            <a routerLink="/blog" routerLinkActive="text-mu-primary after:opacity-100"
+                class="hover:text-mu-primary transition-colors relative whitespace-nowrap after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[2px] after:bg-mu-primary after:opacity-0 hover:after:opacity-100 after:transition-opacity">المقالات</a>
+            <a routerLink="/contact" routerLinkActive="text-mu-primary after:opacity-100"
+                class="hover:text-mu-primary transition-colors relative whitespace-nowrap after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[2px] after:bg-mu-primary after:opacity-0 hover:after:opacity-100 after:transition-opacity">تواصل
+                معنا</a>
+        </nav>
+
+        <!-- CTA & Mobile Toggle -->
+        <div class="flex items-center gap-3 md:gap-4 shrink-0">
+            <!-- Hidden on mobile, shows on large screens -->
+            <a href="#" class="mu-btn mu-btn-primary hidden lg:inline-flex px-5 py-2 text-sm">
+                ابدأ الآن
+            </a>
+
+            <!-- Mobile Menu Toggler -->
+            <button (click)="toggleMobileMenu()"
+                class="lg:hidden text-mu-dark p-2 rounded-lg focus:bg-gray-100 transition-colors focus:outline-none z-50 relative"
+                aria-label="Toggle Menu">
+                <!-- Hamburger Icon -->
+                @if (!isMobileMenuOpen) {
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-7 h-7">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                }
+                <!-- Close (X) Icon -->
+                @if (isMobileMenuOpen) {
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-7 h-7">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                }
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu Overlay -->
+        @if (isMobileMenuOpen) {
+        <div
+            class="absolute top-[100%] left-0 right-0 bg-white border-b border-mu-border/50 shadow-xl lg:hidden flex flex-col z-40 animate-fadeIn">
+            <nav class="flex flex-col px-6 py-6 gap-6 text-[1rem] font-bold text-mu-dark">
+                <a routerLink="/qr-generator" (click)="closeMobileMenu()" routerLinkActive="text-mu-primary"
+                    [routerLinkActiveOptions]="{exact: true}"
+                    class="hover:text-mu-primary transition-colors border-b border-gray-100 pb-2">انشاء منيو
+                    الكتروني</a>
+                <a routerLink="/features" (click)="closeMobileMenu()" routerLinkActive="text-mu-primary"
+                    class="hover:text-mu-primary transition-colors border-b border-gray-100 pb-2">المميزات</a>
+                <a routerLink="/pricing" (click)="closeMobileMenu()" routerLinkActive="text-mu-primary"
+                    class="hover:text-mu-primary transition-colors border-b border-gray-100 pb-2">الباقات</a>
+                <a routerLink="/faq" (click)="closeMobileMenu()" routerLinkActive="text-mu-primary"
+                    class="hover:text-mu-primary transition-colors border-b border-gray-100 pb-2">الاسئلة الشائعة</a>
+                <a routerLink="/blog" (click)="closeMobileMenu()" routerLinkActive="text-mu-primary"
+                    class="hover:text-mu-primary transition-colors border-b border-gray-100 pb-2">المقالات</a>
+                <a routerLink="/contact" (click)="closeMobileMenu()" routerLinkActive="text-mu-primary"
+                    class="hover:text-mu-primary transition-colors pb-2">تواصل معنا</a>
+                <!-- CTA Button Inside Mobile Menu -->
+                <a href="#" class="mu-btn mu-btn-primary w-full text-center py-3.5 text-[0.95rem] mt-2">
+                    ابدأ الآن
+                </a>
+            </nav>
+        </div>
+        }
+
+    </div>
+</header>

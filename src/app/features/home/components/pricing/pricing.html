@@ -1,0 +1,454 @@
+<section class="py-24 bg-white" dir="rtl">
+    <div class="container mx-auto px-4 md:px-8 xl:px-16 text-center">
+
+        <!-- Section Header -->
+        <h2 class="text-3xl md:text-4xl font-bold text-mu-dark mb-4">
+            اختر الباقة المناسبة لك
+        </h2>
+        <p class="text-mu-gray text-[1.1rem] md:text-[1.15rem] font-medium mb-10">
+            اختر الباقة التي تناسب احتياجاتك وميزانيتك
+        </p>
+
+        <!-- Toggle Switch -->
+        <div class="flex items-center justify-center gap-4 mb-16">
+            <span class="font-medium cursor-pointer"
+                [ngClass]="!isYearly ? 'text-mu-primary font-bold' : 'text-mu-gray'"
+                (click)="isYearly && toggleBillingCycle()">شهري</span>
+
+            <button
+                class="w-14 h-7 rounded-full relative transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-mu-primary/50"
+                [ngClass]="isYearly ? 'bg-mu-primary' : 'bg-[#e2e8f0]'" (click)="toggleBillingCycle()"
+                aria-label="Toggle Billing Cycle">
+                <div class="absolute top-[2px] w-6 h-6 bg-white rounded-full transition-all duration-300 ease-in-out shadow-sm border border-gray-100"
+                    [style.right]="isYearly ? '2px' : 'calc(100% - 26px)'">
+                </div>
+            </button>
+
+            <span class="font-medium cursor-pointer" [ngClass]="isYearly ? 'text-mu-primary font-bold' : 'text-mu-gray'"
+                (click)="!isYearly && toggleBillingCycle()">سنوي
+                <span class="text-xs text-mu-primary font-bold ms-1">(وفّر 20%)</span>
+            </span>
+        </div>
+
+        <!-- Pricing Grid: 3 columns -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto items-stretch">
+
+            <!-- Package 1: Free -->
+            <div
+                class="bg-[#F8F9F8] rounded-2xl p-6 border border-mu-dark text-center flex flex-col hover:-translate-y-1 transition-transform duration-300">
+                <h3 class="text-2xl font-bold text-mu-dark mb-4 mt-3">الباقة المجانية</h3>
+                <div class="mb-6 text-mu-dark h-[70px] flex items-center justify-center">
+                    <span class="text-4xl md:text-5xl font-bold">مجاناً</span>
+                </div>
+
+                <ul class="text-sm font-medium text-mu-gray mb-8 flex-1 rounded-xl overflow-hidden">
+                    <li class="flex items-center gap-3 px-4 py-2.5 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>5 أقسام</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2.5 bg-gray-50/80">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>15 عنصر</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2.5 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>دعم لغتين (عربي/إنجليزي)</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2.5 bg-gray-50/80">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>عملات مخصصة</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2.5 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>يتضمن اعلانات خارجية</span>
+                    </li>
+                </ul>
+
+                <button
+                    class="w-full py-3.5 px-6 rounded-xl font-bold text-mu-dark border-2 border-mu-dark hover:bg-mu-dark hover:text-white transition-colors duration-300">
+                    ابدأ مجاناً
+                </button>
+            </div>
+
+            <!-- Package 2: Basic -->
+            <div
+                class="bg-white rounded-2xl p-6 shadow-[0_4px_25px_rgba(0,0,0,0.05)] text-center flex flex-col hover:-translate-y-1 transition-transform duration-300">
+                <h3 class="text-2xl font-bold text-mu-dark mb-4 mt-3">الباقة الاساسية</h3>
+                <div class="mb-6 text-mu-primary h-[70px] flex items-center justify-center gap-2">
+                    <span class="text-4xl md:text-5xl font-bold">{{ isYearly ? '2,500' : '250' }}</span>
+                    <span class="text-2xl font-bold text-mu-gray mt-2">ج.م</span>
+                    <span class="text-mu-gray font-medium mt-2">/ {{ isYearly ? 'سنة' : 'شهر' }}</span>
+                </div>
+
+                <ul class="text-[0.85rem] font-medium text-mu-gray mb-8 flex-1 rounded-xl overflow-hidden">
+                    <li class="flex items-center gap-3 px-4 py-2 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>اقسام غير محدودة</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-gray-50/80">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>عناصر غير محدودة</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>دعم لغات غير محدودة</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-gray-50/80">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>عملات مخصصة</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>لا يتضمن اعلانات</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-gray-50/80">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>صورة الغلاف Cover</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>نسخ مختلفة من العنصر Variations</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-gray-50/80">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>الخيارات</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>الإضافات</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-gray-50/80">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>الفروع</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>روابط التواصل الاجتماعي</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-gray-50/80">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>روابط خارجية مخصصة</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>خرائط جوجل</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-gray-50/80">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>التقييمات</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>تقسيم الطلب ع الأصدقاء</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-gray-50/80">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>أضافة مناطق التوصيل</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>الخصومات</span>
+                    </li>
+                </ul>
+
+                <button
+                    class="w-full py-3.5 px-6 rounded-xl font-bold text-white bg-mu-primary hover:bg-mu-primary-hover shadow-lg shadow-mu-primary/30 transition-all duration-300">
+                    اختر هذه الباقة
+                </button>
+            </div>
+
+            <!-- Package 3: Pro (Highlighted) -->
+            <div
+                class="bg-white rounded-2xl p-6 border-2 border-mu-primary relative text-center flex flex-col shadow-[0_10px_40px_rgba(140,198,63,0.15)] md:-mt-4 hover:-translate-y-2 transition-transform duration-300">
+                <!-- Most Popular Badge -->
+                <div
+                    class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-mu-primary text-white font-bold py-1.5 px-6 rounded-full text-sm whitespace-nowrap shadow-md">
+                    الأكثر شعبية
+                </div>
+
+                <h3 class="text-2xl font-bold text-mu-dark mb-4 mt-5">الباقة الاحترافية</h3>
+                <div class="mb-6 text-mu-primary h-[70px] flex items-center justify-center gap-2">
+                    <span class="text-5xl md:text-6xl font-bold">{{ isYearly ? '5,000' : '500' }}</span>
+                    <span class="text-2xl font-bold text-mu-gray mt-2">ج.م</span>
+                    <span class="text-mu-gray font-medium mt-2">/ {{ isYearly ? 'سنة' : 'شهر' }}</span>
+                </div>
+
+                <ul class="text-[0.85rem] font-medium text-mu-dark mb-8 flex-1 rounded-xl overflow-hidden">
+                    <li
+                        class="flex items-center justify-center gap-2 px-4 py-2.5 bg-mu-primary/5 font-bold text-mu-dark">
+                        <span>مميزات الباقة الأساسية</span> <span class="text-xl leading-none font-black">+</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>شاشة الكاشير</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-gray-50/80">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>التقارير والإحصائيات</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>شاشة الطلبات</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-gray-50/80">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>اشعار لحظي للطلبات</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>التركيب الغذائي</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-gray-50/80">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>الطلب اونلاين</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>طرق الدفع</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-gray-50/80">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>أنواع الطلبات</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>ورديات العمل</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-gray-50/80">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>الطاولات</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-white">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>نظام لادارة الموظفين</span>
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 bg-gray-50/80">
+                        <svg class="flex-shrink-0 w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>ادارة المخزون</span>
+                    </li>
+                </ul>
+
+                <button
+                    class="w-full py-3.5 px-6 rounded-xl font-bold text-white bg-mu-primary hover:bg-mu-primary-hover shadow-lg shadow-mu-primary/30 transition-all duration-300">
+                    اختر هذه الباقة
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Package 4: Commercial (Full-width separate row) -->
+        <div class="max-w-6xl mx-auto mt-6">
+            <div
+                class="bg-gradient-to-l from-mu-dark to-[#1e293b] rounded-2xl p-8 md:p-10 text-center md:text-right shadow-[0_10px_40px_rgba(0,0,0,0.15)] flex flex-col md:flex-row items-center gap-6 md:gap-10">
+
+                <!-- Text Content -->
+                <div class="flex-1 order-2 md:order-1">
+                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">الباقة التجارية</h3>
+                    <p class="text-gray-300 text-[0.95rem] leading-relaxed mb-5">
+                        باقة شاملة للمشاريع الكبيرة — تتضمن جميع مميزات الباقة الاحترافية بالإضافة إلى دومين خاص،
+                        تكامل مع بوابات الدفع، خدمات الرسائل SMS، واتساب للطلبات، وتكامل API كامل
+                    </p>
+                    <ul class="flex flex-wrap justify-center md:justify-start gap-2.5 mb-6">
+                        <li
+                            class="flex items-center gap-2 bg-white/10 rounded-full py-1.5 px-4 text-sm text-gray-200 font-medium">
+                            <svg class="w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            اشعار واتساب
+                        </li>
+                        <li
+                            class="flex items-center gap-2 bg-white/10 rounded-full py-1.5 px-4 text-sm text-gray-200 font-medium">
+                            <svg class="w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            دومين خاص
+                        </li>
+                        <li
+                            class="flex items-center gap-2 bg-white/10 rounded-full py-1.5 px-4 text-sm text-gray-200 font-medium">
+                            <svg class="w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            بوابات الدفع
+                        </li>
+                        <li
+                            class="flex items-center gap-2 bg-white/10 rounded-full py-1.5 px-4 text-sm text-gray-200 font-medium">
+                            <svg class="w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            تكامل SMS
+                        </li>
+                        <li
+                            class="flex items-center gap-2 bg-white/10 rounded-full py-1.5 px-4 text-sm text-gray-200 font-medium">
+                            <svg class="w-4 h-4 text-mu-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            تكامل API
+                        </li>
+                    </ul>
+                    <p class="text-xs text-gray-400 mb-5">* بعض المميزات قد تحتاج رسوم إضافية</p>
+                    <button
+                        class="mu-btn mu-btn-primary !px-10 !py-3.5 text-base font-bold shadow-lg shadow-mu-primary/30">
+                        تواصل مع المبيعات
+                    </button>
+                </div>
+
+                <!-- Price Block -->
+                <div class="order-1 md:order-2 flex flex-col items-center shrink-0">
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center min-w-[180px]">
+                        <span class="text-mu-primary text-sm font-bold block mb-2">تبدأ من</span>
+                        <div class="flex items-center justify-center gap-2">
+                            <span class="text-4xl md:text-5xl font-bold text-white">{{ isYearly ? '20,000' : '2,000'
+                                }}</span>
+                            <span class="text-lg font-bold text-gray-300">ج.م</span>
+                        </div>
+                        <span class="text-gray-400 font-medium text-sm">/ {{ isYearly ? 'سنة' : 'شهر' }}</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

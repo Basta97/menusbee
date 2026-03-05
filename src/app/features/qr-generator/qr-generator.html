@@ -1,0 +1,195 @@
+<!-- Hero Header -->
+<section
+    class="relative bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-50/40 via-white to-white pt-20 pb-16 overflow-hidden">
+    <div class="container mx-auto px-4 md:px-8 xl:px-16 text-center">
+        <h1 class="text-[2rem] md:text-[2.8rem] font-bold text-mu-dark leading-[1.3] mb-4">
+            مولّد <span class="text-mu-primary">QR Code</span> مجاني للمنيو
+        </h1>
+        <p class="text-mu-gray text-[1rem] md:text-[1.15rem] max-w-2xl mx-auto font-medium leading-[1.8]">
+            أنشئ كود QR لقائمة مطعمك الإلكترونية مجاناً — خصّص الألوان والحجم وأضف شعارك وحمّله كصورة PNG جاهزة للطباعة
+        </p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="py-16 bg-mu-light">
+    <div class="container mx-auto px-4 md:px-8 xl:px-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-start">
+
+            <!-- Form Card -->
+            <div class="bg-white rounded-3xl shadow-[0_4px_25px_rgba(0,0,0,0.05)] p-8">
+                <h2 class="text-xl font-bold text-mu-dark mb-6 flex items-center gap-2">
+                    <svg class="w-6 h-6 text-mu-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    إعدادات QR Code
+                </h2>
+
+                <!-- URL Input -->
+                <div class="mb-5">
+                    <label for="qr-url" class="block text-sm font-semibold text-mu-dark mb-2">رابط المنيو</label>
+                    <input id="qr-url" type="url" [ngModel]="qrForm().url" (ngModelChange)="updateField('url', $event)"
+                        dir="ltr" placeholder="https://your-menu-url.com"
+                        class="w-full border border-mu-border rounded-xl p-3.5 text-sm text-mu-dark focus:ring-2 focus:ring-mu-primary/50 focus:border-mu-primary outline-none transition-all" />
+                </div>
+
+                <!-- Size Dropdown -->
+                <div class="mb-5">
+                    <label for="qr-size" class="block text-sm font-semibold text-mu-dark mb-2">حجم الكود (بكسل)</label>
+                    <select id="qr-size" [ngModel]="qrForm().size" (ngModelChange)="updateField('size', +$event)"
+                        class="w-full border border-mu-border rounded-xl p-3.5 text-sm text-mu-dark bg-white focus:ring-2 focus:ring-mu-primary/50 focus:border-mu-primary outline-none transition-all appearance-none cursor-pointer">
+                        @for (s of sizes; track s) {
+                        <option [value]="s">{{ s }} × {{ s }}</option>
+                        }
+                    </select>
+                </div>
+
+                <!-- Color Pickers Row -->
+                <div class="grid grid-cols-2 gap-4 mb-5">
+                    <div>
+                        <label for="qr-fg" class="block text-sm font-semibold text-mu-dark mb-2">لون الكود</label>
+                        <div class="flex items-center gap-3 border border-mu-border rounded-xl p-3 bg-white">
+                            <input id="qr-fg" type="color" [ngModel]="qrForm().fgColor"
+                                (ngModelChange)="updateField('fgColor', $event)"
+                                class="w-8 h-8 rounded-lg border-0 cursor-pointer p-0" />
+                            <span class="text-xs text-mu-gray font-mono" dir="ltr">{{ qrForm().fgColor }}</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="qr-bg" class="block text-sm font-semibold text-mu-dark mb-2">لون الخلفية</label>
+                        <div class="flex items-center gap-3 border border-mu-border rounded-xl p-3 bg-white">
+                            <input id="qr-bg" type="color" [ngModel]="qrForm().bgColor"
+                                (ngModelChange)="updateField('bgColor', $event)"
+                                class="w-8 h-8 rounded-lg border-0 cursor-pointer p-0" />
+                            <span class="text-xs text-mu-gray font-mono" dir="ltr">{{ qrForm().bgColor }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logo Upload -->
+                <div class="mb-8">
+                    <label class="block text-sm font-semibold text-mu-dark mb-2">شعار / أيقونة (اختياري)</label>
+                    @if (logoSrc()) {
+                    <!-- Logo Preview -->
+                    <div class="flex items-center gap-4 border border-mu-border rounded-xl p-3 bg-white">
+                        <img [src]="logoSrc()" alt="Logo preview"
+                            class="w-12 h-12 rounded-lg object-contain border border-mu-border/50" />
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm text-mu-dark font-medium truncate">{{ logoFileName() }}</p>
+                            <p class="text-xs text-mu-gray">سيظهر في منتصف QR Code</p>
+                        </div>
+                        <button (click)="removeLogo()" type="button"
+                            class="text-red-400 hover:text-red-600 transition-colors p-1.5 rounded-lg hover:bg-red-50"
+                            title="إزالة الشعار">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    } @else {
+                    <!-- Upload Area -->
+                    <label for="logo-upload"
+                        class="flex flex-col items-center gap-2 border-2 border-dashed border-mu-border rounded-xl p-5 bg-mu-light/50 cursor-pointer hover:border-mu-primary/50 hover:bg-mu-light transition-all">
+                        <svg class="w-8 h-8 text-mu-gray/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span class="text-sm text-mu-gray font-medium">اضغط لرفع شعارك</span>
+                        <span class="text-xs text-mu-gray/70">PNG, JPG, SVG — حتى 1MB</span>
+                    </label>
+                    <input id="logo-upload" type="file" accept="image/*" class="hidden"
+                        (change)="onLogoUpload($event)" />
+                    }
+                </div>
+
+                <!-- Generate Button -->
+                <button (click)="generate()"
+                    class="mu-btn mu-btn-primary w-full !py-4 text-base font-bold tracking-wide">
+                    <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+                    </svg>
+                    إنشاء QR Code
+                </button>
+            </div>
+
+            <!-- Preview Card -->
+            <div
+                class="bg-white rounded-3xl shadow-[0_4px_25px_rgba(0,0,0,0.05)] p-8 flex flex-col items-center justify-center min-h-[420px]">
+                @if (showPreview()) {
+                <h2 class="text-xl font-bold text-mu-dark mb-6">معاينة QR Code</h2>
+
+                <div
+                    class="qr-preview-container bg-white border-2 border-mu-border/50 rounded-2xl p-6 mb-6 shadow-sm overflow-hidden">
+                    <qrcode [qrdata]="qrData()" [width]="qrForm().size" [colorDark]="qrForm().fgColor"
+                        [colorLight]="qrForm().bgColor" [errorCorrectionLevel]="'H'" [elementType]="'canvas'"
+                        [imageSrc]="logoSrc()" [imageHeight]="logoSize()" [imageWidth]="logoSize()" [margin]="2">
+                    </qrcode>
+                </div>
+
+                <p class="text-xs text-mu-gray mb-4 text-center max-w-xs truncate" dir="ltr">{{ qrData() }}</p>
+
+                <!-- Download Button -->
+                <button (click)="downloadQr()" class="mu-btn mu-btn-outline !px-10 !py-3 text-sm font-bold gap-2">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    تحميل PNG
+                </button>
+                } @else {
+                <!-- Empty state -->
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-2xl bg-mu-light flex items-center justify-center">
+                        <svg class="w-12 h-12 text-mu-border" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-mu-dark mb-2">QR Code جاهز للإنشاء</h3>
+                    <p class="text-sm text-mu-gray max-w-xs">أدخل رابط المنيو الإلكتروني واضغط "إنشاء" لتوليد كود QR
+                        مخصص</p>
+                </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Upsell Section (Trial Features) -->
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-4 md:px-8 xl:px-16 text-center">
+        <h2 class="text-[1.8rem] md:text-[2.2rem] font-bold text-mu-dark mb-3">
+            احصل على مميزات <span class="text-mu-primary">احترافية</span> أكثر
+        </h2>
+        <p class="text-mu-gray text-[1rem] md:text-[1.1rem] mb-12 max-w-2xl mx-auto">
+            اشترك في باقات منيوز بي للحصول على QR ديناميكي وإحصائيات مسح متقدمة وشعار مخصص داخل الكود
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+            @for (feature of trialFeatures; track feature.title) {
+            <div
+                class="relative bg-white rounded-3xl p-8 border border-mu-border/60 shadow-[0_4px_25px_rgba(0,0,0,0.03)] text-center group hover:-translate-y-1 transition-transform duration-300">
+                <!-- Lock Badge -->
+                <div
+                    class="absolute -top-3 left-1/2 -translate-x-1/2 bg-mu-dark text-white text-2xs font-bold py-1 px-4 rounded-full">
+                    🔒 باقة مدفوعة
+                </div>
+
+                <div class="text-4xl mb-4 mt-2">{{ feature.icon }}</div>
+                <h3 class="text-lg font-bold text-mu-dark mb-2">{{ feature.title }}</h3>
+                <p class="text-sm text-mu-gray leading-relaxed">{{ feature.desc }}</p>
+            </div>
+            }
+        </div>
+
+        <a href="#" class="mu-btn mu-btn-primary !px-12 !py-3.5 text-lg">
+            اكتشف الباقات
+        </a>
+    </div>
+</section>

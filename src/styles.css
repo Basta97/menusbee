@@ -1,3 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import "tailwindcss";
+
+@theme {
+    --color-mu-primary: #8AC23F;
+    /* Approximate matching the green in the design */
+    --color-mu-primary-dark: #63902D;
+    --color-mu-dark: #18181b;
+    --color-mu-gray: #71717a;
+    --color-mu-light: #f4f4f5;
+    --color-mu-border: #e4e4e7;
+
+    --font-ibm: "IBM Plex Sans Arabic", sans-serif;
+
+    --text-2xs: 0.625rem;
+}
+
+@layer base {
+    html {
+        font-family: var(--font-ibm);
+    }
+}
+
+.mu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.50rem;
+    /* 12px for standard buttons */
+    padding: 0.625rem 1.75rem;
+    /* px-7 py-2.5 */
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.mu-btn-primary {
+    background-color: var(--color-mu-primary);
+    color: white;
+    border: 1px solid var(--color-mu-primary);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    /* shadow-sm */
+}
+
+.mu-btn-primary:hover {
+    background-color: var(--color-mu-primary-dark, #75A536);
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    /* shadow-md */
+    transform: translateY(-2px);
+}
+
+.mu-btn-outline {
+    background-color: white;
+    color: var(--color-mu-dark);
+    border: 1px solid var(--color-mu-border);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.mu-btn-outline:hover {
+    background-color: var(--color-mu-primary);
+    color: white;
+    border-color: var(--color-mu-primary);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+}
+
+/* The mask creates the fade-out effect on the edges */
+.mu-slider-mask {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Make swiper transition linear for continuous scrolling */
+.swiper-wrapper {
+    transition-timing-function: linear !important;
+}

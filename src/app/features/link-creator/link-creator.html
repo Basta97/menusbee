@@ -1,0 +1,184 @@
+<div class="min-h-screen bg-mu-light flex flex-col lg:flex-row p-4 md:p-8 gap-8" dir="rtl">
+
+    <!-- Left Side: Editor (Form Builder) -->
+    <form [formGroup]="linkForm" (ngSubmit)="dummySave()"
+        class="flex-1 bg-white rounded-3xl shadow-sm border border-mu-border/20 p-6 md:p-8 overflow-y-auto max-h-[calc(100vh-4rem)]">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+            <div>
+                <h1 class="text-2xl font-bold text-mu-dark">إنشاء صفحة الروابط (Link Creator)</h1>
+                <p class="text-mu-gray text-sm mt-1">قم بتخصيص صفحتك الشخصية وإضافة روابطك بسهولة</p>
+            </div>
+            <button type="submit" [disabled]="!linkForm.valid"
+                class="mu-btn mu-btn-primary px-8 py-2.5 rounded-xl text-sm whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed">
+                حفظ التغييرات
+            </button>
+        </div>
+
+        <div class="space-y-8">
+            <!-- Profile Info Module -->
+            <div class="space-y-5 bg-[#FAFBFA] p-6 rounded-2xl border border-mu-border/30">
+                <h3 class="text-lg font-bold text-mu-dark border-b border-mu-border/20 pb-3">الملف الشخصي</h3>
+
+                <div>
+                    <label class="block text-sm font-bold text-mu-dark mb-1.5">الاسم</label>
+                    <input type="text" formControlName="name"
+                        class="w-full px-4 py-3 rounded-xl border border-mu-border/50 focus:border-mu-primary focus:ring-1 outline-none transition-all bg-white shadow-sm"
+                        placeholder="اسم نشاطك">
+                    @if(linkForm.get('name')?.invalid && linkForm.get('name')?.touched) {
+                    <span class="text-red-500 text-xs mt-1 block">يرجى إدخال الاسم</span>
+                    }
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-mu-dark mb-1.5">النبذة (Bio)</label>
+                    <textarea formControlName="bio" rows="3"
+                        class="w-full px-4 py-3 rounded-xl border border-mu-border/50 focus:border-mu-primary focus:ring-1 outline-none transition-all bg-white shadow-sm"
+                        placeholder="نبذة موجزة..."></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-mu-dark mb-1.5">رابط الصورة التعريفي (Avatar)</label>
+                    <input type="url" formControlName="avatar" dir="ltr"
+                        class="w-full px-4 py-3 rounded-xl border border-mu-border/50 focus:border-mu-primary focus:ring-1 outline-none transition-all bg-white shadow-sm text-left"
+                        placeholder="https://...">
+                </div>
+            </div>
+
+            <!-- Links Module -->
+            <div class="bg-white rounded-2xl">
+                <div class="flex justify-between items-center mb-5 border-b border-mu-border/20 pb-3">
+                    <h3 class="text-lg font-bold text-mu-dark">الروابط</h3>
+                    <button type="button" (click)="addLink()"
+                        class="text-mu-primary font-bold text-sm bg-mu-primary/10 hover:bg-mu-primary/20 transition-colors px-4 py-2 rounded-lg flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                        إضافة رابط جديد
+                    </button>
+                </div>
+
+                <div class="space-y-4" formArrayName="links">
+                    <!-- Dynamic Reactive Form FormArray Iteration -->
+                    @for (linkControl of linksFormArray.controls; track $index) {
+                    <div [formGroupName]="$index"
+                        class="bg-[#FAFBFA] border border-mu-border/40 rounded-2xl p-5 flex flex-col gap-4 relative group hover:border-mu-border transition-colors">
+
+                        <!-- Remove button -->
+                        <button type="button" (click)="removeLink($index)"
+                            class="absolute top-4 left-4 text-mu-gray hover:text-red-500 transition-colors p-1 flex items-center justify-center shrink-0 w-8 h-8 rounded-full focus:bg-red-50 focus:outline-none"
+                            title="حذف الرابط">
+                            <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                        </button>
+
+                        <div class="pr-2">
+                            <label class="block text-xs font-bold text-mu-gray mb-1">عنوان الرابط</label>
+                            <input type="text" formControlName="title"
+                                class="w-full lg:w-[85%] px-3 py-2 rounded-lg border border-mu-border/50 focus:border-mu-primary focus:ring-1 outline-none bg-white font-medium text-mu-dark mb-3">
+                            @if(linkControl.get('title')?.invalid && linkControl.get('title')?.touched) {
+                            <span class="text-red-500 text-xs mt-1 block mb-3">يرجى إدخال العنوان</span>
+                            }
+
+                            <label class="block text-xs font-bold text-mu-gray mb-1">مسار الرابط (URL)</label>
+                            <input type="url" formControlName="url" dir="ltr"
+                                class="w-full lg:w-[85%] px-3 py-2 rounded-lg border border-mu-border/50 focus:border-mu-primary focus:ring-1 outline-none bg-white text-left text-sm text-gray-500 tracking-wide">
+                            @if(linkControl.get('url')?.invalid && linkControl.get('url')?.touched) {
+                            <span class="text-red-500 text-xs mt-1 block">يرجى إدخال مسار صحيح يبدأ بـ http:// أو
+                                https://</span>
+                            }
+                        </div>
+                    </div>
+                    }
+
+                    @if (linksFormArray.length === 0) {
+                    <div
+                        class="text-center py-8 text-mu-gray border-2 border-dashed border-mu-border/40 rounded-2xl font-medium">
+                        لم تقم بإضافة روابط حتى الآن.
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Right Side: Live Preview (Mobile Phone Mockup) -->
+    <div class="w-full lg:w-[420px] shrink-0 sticky top-4 flex flex-col items-center pb-8">
+
+        <!-- Copy Link Action -->
+        <button (click)="copyLink()"
+            class="mb-6 bg-white border border-mu-border/50 shadow-sm rounded-xl px-6 py-3 text-[0.95rem] font-bold text-mu-dark hover:shadow-md hover:border-mu-primary/30 transition-all flex items-center gap-2">
+            <svg class="w-5 h-5 text-mu-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+            </svg>
+            انسخ رابط الصفحة الخاص بك
+        </button>
+
+        <!-- The Phone Frame -->
+        <div
+            class="relative w-[340px] h-[720px] bg-white border-[14px] border-black rounded-[3rem] shadow-2xl overflow-hidden ring-4 ring-black/5">
+
+            <!-- Camera Notch (Dynamic Island shape) -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-b-3xl z-20"></div>
+
+            <!-- Preview Screen Content -->
+            <!-- Reading from formState() signal derived from form valueChanges -->
+            <div
+                class="absolute inset-0 bg-gradient-to-b from-green-50/50 via-[#FAFBFA] to-[#FAFBFA] overflow-y-auto w-full h-full text-center px-6 pt-16 pb-10 custom-scrollbar mt-1.5">
+
+                <!-- Avatar -->
+                <div
+                    class="w-24 h-24 mx-auto mb-4 rounded-full border-4 border-white shadow-md overflow-hidden bg-white flex items-center justify-center">
+                    @if (formState().avatar) {
+                    <img [src]="formState().avatar" class="w-full h-full object-cover">
+                    } @else {
+                    <svg class="w-10 h-10 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    }
+                </div>
+
+                <!-- Display Name -->
+                <h2 class="text-[1.35rem] font-bold text-mu-dark mb-1">
+                    {{ formState().name || '@username' }}
+                </h2>
+
+                <!-- Bio -->
+                <p class="text-[0.9rem] font-medium text-mu-gray leading-relaxed px-2 mb-8 whitespace-pre-line">
+                    {{ formState().bio || 'هنا تُكتب النبذة التعريفية الخاصة بك...' }}
+                </p>
+
+                <!-- Listed Links -->
+                <div class="flex flex-col gap-3.5 w-full">
+                    @for (link of formState().links; track $index) {
+                    <a [href]="link.url || '#'" target="_blank"
+                        class="flex justify-center items-center w-full bg-white border border-[#E5E7EB] hover:border-mu-primary text-mu-dark hover:text-mu-primary font-bold text-[0.95rem] py-4 px-6 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-all hover:shadow-md hover:-translate-y-0.5 min-h-[56px] break-words">
+                        {{ link.title || 'عنوان الرابط' }}
+                    </a>
+                    }
+                </div>
+
+                <!-- Branding -->
+                <div class="mt-8 pt-8 opacity-50">
+                    <img src="/images/logo.png" class="h-6 mx-auto grayscale" alt="Menusbee Logo">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast Notification -->
+    @if (showToast()) {
+    <div
+        class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-[#1f2937] text-white px-6 py-3.5 rounded-full shadow-2xl flex items-center gap-3 animate-fadeIn z-50">
+        <div class="bg-mu-primary rounded-full p-1 text-white">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+            </svg>
+        </div>
+        <span class="font-bold text-[0.95rem]">تم حفظ البيانات بنجاح!</span>
+    </div>
+    }
+</div>
