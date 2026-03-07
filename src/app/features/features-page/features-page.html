@@ -1,5 +1,5 @@
 <!-- Hero Section -->
-<section class="py-20 bg-gradient-to-b from-mu-light to-white" dir="rtl">
+<section class="py-20 bg-gradient-to-b from-mu-   to-white" dir="rtl">
     <div class="container mx-auto px-4 md:px-8 xl:px-16 text-center">
         <h1 class="text-3xl md:text-5xl font-bold text-mu-dark mb-4">
             مميزات <span class="text-mu-primary">منيوبي</span>
@@ -11,111 +11,196 @@
 </section>
 
 <!-- All Features Inside Container -->
-<section class="py-16 bg-white" dir="rtl">
+<section class="py-12 bg-white" dir="rtl">
     <div class="container mx-auto px-4 md:px-8 xl:px-16">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-right">
 
             <!-- Feature 1: QR Code (Full Width) -->
             <div
-                class="col-span-1 lg:col-span-2 bg-[#FAFBFA] rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 border border-mu-border/20 hover:border-mu-border/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                <div class="flex-1 flex justify-center items-center w-full">
+                class="col-span-1 lg:col-span-2 bg-[#F9FAFB] rounded-[1.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 md:gap-16 border border-mu-border/30 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300">
+                <div class="flex-1 flex justify-center items-center w-full relative">
+                    <!-- Subtle background circle behind image -->
+                    <div class="absolute inset-0 bg-mu-primary/5 rounded-full scale-75 blur-2xl"></div>
                     <img src="/images/features/imagef_6.png" alt="رمز QR سريع للمنيو"
-                        class="w-full max-w-[400px] object-contain" />
+                        class="w-full max-w-[380px] object-contain relative z-10 drop-shadow-sm hover:-translate-y-2 transition-transform duration-500" />
                 </div>
                 <div class="flex-1">
-                    <h2 class="text-2xl md:text-[2rem] font-bold text-mu-dark mb-4 leading-tight">رمز QR سريع للمنيو
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 bg-mu-primary/10 text-mu-primary text-xs font-bold mb-5 rounded-full">
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+                        </svg>
+                        الوصول السريع
+                    </div>
+                    <h2 class="text-2xl md:text-[2.2rem] font-bold text-mu-dark mb-4 leading-tight">رمز QR سريع للمنيو
                     </h2>
-                    <p class="text-mu-gray leading-[1.9] text-[0.95rem] md:text-base font-medium">
+                    <p class="text-mu-gray leading-[1.8] text-[1rem] font-medium mb-8">
                         باستخدام منيوز بي يمكنك تحويل قائمتك الورقية إلى منيو إلكتروني يعمل برمز QR قابل للمسح عبر أي
-                        هاتف
-                        ذكي. تمكن هذه الميزة عملائك من تصفح منتجاتك بسهولة فائقة عبر هواتفهم الذكية لتمنحهم تجربة سلسة
-                        ومتطورة، أياً كان نشاطك التجاري.
+                        هاتف ذكي. تمكن هذه الميزة عملائك من تصفح منتجاتك بسهولة فائقة لتمنحهم تجربة
+                        سلسة ومتطورة.
                     </p>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a routerLink="/pricing"
+                            class="inline-flex items-center justify-center bg-mu-dark text-white hover:bg-black px-6 py-2.5 rounded-lg font-bold text-[0.95rem] transition-colors">
+                            اشترك الآن
+                        </a>
+                        <a routerLink="/qr-generator"
+                            class="inline-flex items-center justify-center bg-white text-mu-dark border border-mu-border hover:bg-gray-50 px-6 py-2.5 rounded-lg font-bold text-[0.95rem] transition-colors">
+                            أداة الباركود المجانية
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <!-- Feature 2: Menu Branding (Half Width) -->
             <div
-                class="bg-[#FAFBFA] rounded-[2rem] p-8 flex flex-col border border-mu-border/20 hover:border-mu-border/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                <div class="mb-8 w-full">
+                class="bg-white rounded-[1.5rem] p-8 flex flex-col border border-mu-border/40 hover:border-mu-border/80 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300">
+                <div
+                    class="mb-8 w-full bg-[#F9FAFB] rounded-xl p-6 flex flex-1 items-center justify-center min-h-[200px]">
                     <img src="/images/features/imagef_2.png" alt="تحكم في شكل المنيو وهويته"
-                        class="w-full h-[220px] object-contain mx-auto" />
+                        class="w-full max-h-[180px] object-contain mx-auto mix-blend-multiply drop-shadow-sm group-hover:scale-105 transition-transform duration-500" />
                 </div>
-                <div class="mt-auto">
-                    <h3 class="text-xl md:text-2xl font-bold text-mu-dark mb-4">تحكم في شكل المنيو وهويته</h3>
-                    <p class="text-mu-gray leading-[1.8] text-[0.95rem] font-medium">
-                        صمم المنيو الإلكتروني بأسلوبك الخاص واختر الألوان التي تمثل علامتك التجارية، أضف شعارك، وصورة
-                        غلاف
-                        تعبر عن نشاطك. يمكنك التحكم في كل التفاصيل البصرية بسهولة لتقدم منيو احترافي يعكس هوية مشروعك.
+                <div class="mt-auto flex flex-col">
+                    <h3 class="text-[1.35rem] font-bold text-mu-dark mb-2">هوية علامتك التجارية</h3>
+                    <p class="text-mu-gray leading-[1.7] text-[0.95rem] font-medium mb-6">
+                        صمم المنيو بأسلوبك واختر الألوان التي تمثل علامتك، أضف شعارك بكل سهولة.
                     </p>
+                    <div class="mt-auto pt-2 border-t border-gray-100">
+                        <a routerLink="/pricing"
+                            class="inline-flex w-max items-center gap-1.5 text-mu-dark font-bold hover:text-mu-primary transition-colors text-[0.9rem] mt-3">
+                            <span
+                                class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-mu-dark">
+                                <svg class="w-3 h-3 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </span>
+                            ترقية الباقة
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <!-- Feature 3: Control Panel (Half Width) -->
             <div
-                class="bg-[#FAFBFA] rounded-[2rem] p-8 flex flex-col border border-mu-border/20 hover:border-mu-border/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                <div class="mb-8 w-full">
+                class="bg-white rounded-[1.5rem] p-8 flex flex-col border border-mu-border/40 hover:border-mu-border/80 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300">
+                <div
+                    class="mb-8 w-full bg-[#F9FAFB] rounded-xl p-6 flex flex-1 items-center justify-center min-h-[200px]">
                     <img src="/images/features/imagef_3.png" alt="نظام تحكم مرن وسهل"
-                        class="w-full h-[220px] object-contain mx-auto" />
+                        class="w-full max-h-[180px] object-contain mx-auto mix-blend-multiply drop-shadow-sm group-hover:scale-105 transition-transform duration-500" />
                 </div>
-                <div class="mt-auto">
-                    <h3 class="text-xl md:text-2xl font-bold text-mu-dark mb-4">نظام تحكم مرن وسهل</h3>
-                    <p class="text-mu-gray leading-[1.8] text-[0.95rem] font-medium">
-                        إدارة المنيو الإلكتروني لم يعد يتطلب أي خبرة تقنية. صممنا لوحة تحكم سهلة وواضحة، تتيح لك التحكم
-                        الكامل على كل تفاصيل قائمتك من إضافة المنتجات وتصنيفها إلى تعديل أسعارها بمنتهى السلاسة والسرعة.
+                <div class="mt-auto flex flex-col">
+                    <h3 class="text-[1.35rem] font-bold text-mu-dark mb-2">لوحة تحكم حيوية</h3>
+                    <p class="text-mu-gray leading-[1.7] text-[0.95rem] font-medium mb-6">
+                        صممنا لوحة تحكم تتيح لك التحكم على كل تفاصيل التعديل والاضافة بمنتهى السلاسة.
                     </p>
+                    <div class="mt-auto pt-2 border-t border-gray-100">
+                        <a routerLink="/pricing"
+                            class="inline-flex w-max items-center gap-1.5 text-mu-dark font-bold hover:text-mu-primary transition-colors text-[0.9rem] mt-3">
+                            <span
+                                class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-mu-dark">
+                                <svg class="w-3 h-3 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </span>
+                            اكتشف الباقات
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <!-- Feature 4: Analytics (Half Width) -->
             <div
-                class="bg-[#FAFBFA] rounded-[2rem] p-8 flex flex-col border border-mu-border/20 hover:border-mu-border/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                <div class="mb-8 w-full">
-                    <img src="/images/features/imagef_1.png" alt="احصائيات دقيقة ومتابعة التقييمات"
-                        class="w-full h-[220px] object-contain mx-auto" />
+                class="bg-white rounded-[1.5rem] p-8 flex flex-col border border-mu-border/40 hover:border-mu-border/80 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300">
+                <div
+                    class="mb-8 w-full bg-[#F9FAFB] rounded-xl p-6 flex flex-1 items-center justify-center min-h-[200px]">
+                    <img src="/images/features/imagef_1.png" alt="احصائيات دقيقة"
+                        class="w-full max-h-[180px] object-contain mx-auto mix-blend-multiply drop-shadow-sm group-hover:scale-105 transition-transform duration-500" />
                 </div>
-                <div class="mt-auto">
-                    <h3 class="text-xl md:text-2xl font-bold text-mu-dark mb-4">احصائيات دقيقة ومتابعة التقييمات</h3>
-                    <p class="text-mu-gray leading-[1.8] text-[0.95rem] font-medium">
-                        تعرّف على عدد الزوار الذين تصفحوا قائمتك وأكثر الأصناف التي نالت اهتمامهم وأكثر منتجاتك مبيعاً،
-                        مع متابعة كاملة لتقييمات العملاء وردودهم حول ما تعرض.
+                <div class="mt-auto flex flex-col">
+                    <h3 class="text-[1.35rem] font-bold text-mu-dark mb-2">إحصائيات متقدمة</h3>
+                    <p class="text-mu-gray leading-[1.7] text-[0.95rem] font-medium mb-6">
+                        تعرّف على الزوار وتصفح القائمة مع متابعة دقيقة لتقييمات العملاء وردودهم بضغطة زر.
                     </p>
+                    <div class="mt-auto pt-2 border-t border-gray-100">
+                        <a routerLink="/pricing"
+                            class="inline-flex w-max items-center gap-1.5 text-mu-dark font-bold hover:text-mu-primary transition-colors text-[0.9rem] mt-3">
+                            <span
+                                class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-mu-dark">
+                                <svg class="w-3 h-3 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </span>
+                            اكتشف الميزة
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <!-- Feature 5: Product Details (Half Width) -->
             <div
-                class="bg-[#FAFBFA] rounded-[2rem] p-8 flex flex-col border border-mu-border/20 hover:border-mu-border/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                <div class="mb-8 w-full">
+                class="bg-white rounded-[1.5rem] p-8 flex flex-col border border-mu-border/40 hover:border-mu-border/80 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300">
+                <div
+                    class="mb-8 w-full bg-[#F9FAFB] rounded-xl p-6 flex flex-1 items-center justify-center min-h-[200px]">
                     <img src="/images/features/imagef_4.png" alt="بيانات واضحة في كل مكان"
-                        class="w-full h-[220px] object-contain mx-auto" />
+                        class="w-full max-h-[180px] object-contain mx-auto mix-blend-multiply drop-shadow-sm group-hover:scale-105 transition-transform duration-500" />
                 </div>
-                <div class="mt-auto">
-                    <h3 class="text-xl md:text-2xl font-bold text-mu-dark mb-4">بيانات واضحة في كل مكان</h3>
-                    <p class="text-mu-gray leading-[1.8] text-[0.95rem] font-medium">
-                        اعرض تفاصيل كل منتج بوضوح داخل المنيو مثل المكونات، السعرات الحرارية، أو العناصر التي قد تسبب
-                        حساسية. هذه المعلومات تساعد العميل على اتخاذ قرارات أفضل وتشعره بالثقة تجاه ما يشتريه.
+                <div class="mt-auto flex flex-col">
+                    <h3 class="text-[1.35rem] font-bold text-mu-dark mb-2">معلومات واضحة</h3>
+                    <p class="text-mu-gray leading-[1.7] text-[0.95rem] font-medium mb-6">
+                        اعرض تفاصيل منتجك بوضوح مثل المكونات والسعرات. لتزيد القيمة وتساعد العميل على اتخاذ قراره بثقة.
                     </p>
+                    <div class="mt-auto pt-2 border-t border-gray-100">
+                        <a routerLink="/pricing"
+                            class="inline-flex w-max items-center gap-1.5 text-mu-dark font-bold hover:text-mu-primary transition-colors text-[0.9rem] mt-3">
+                            <span
+                                class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-mu-dark">
+                                <svg class="w-3 h-3 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </span>
+                            اكتشف الباقة
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <!-- Feature 6: POS System (Full Width) -->
             <div
-                class="col-span-1 lg:col-span-2 bg-[#FAFBFA] rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 border border-mu-border/20 hover:border-mu-border/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                <div class="flex-1">
-                    <h2 class="text-2xl md:text-[2rem] font-bold text-mu-dark mb-4 leading-tight">نظام نقاط البيع
-                        المتكامل
-                    </h2>
-                    <p class="text-mu-gray leading-[1.9] text-[0.95rem] md:text-base font-medium">
-                        احصل على نظام نقاط البيع المتطور الذي يربط بين المنيو الإلكتروني ونظام إدارة المبيعات. يمكنك
-                        إدارة
-                        الطلبات، تتبع المبيعات، وإدارة المخزون بسهولة تامة. النظام يتكامل مع جميع أجهزة نقاط البيع ويوفر
-                        تقارير مفصلة عن الأداء اليومي والشهري لمساعدتك في اتخاذ القرارات الصحيحة.
-                    </p>
-                </div>
-                <div class="flex-1 flex justify-center items-center w-full">
+                class="col-span-1 lg:col-span-2 bg-[#F9FAFB] rounded-[1.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 md:gap-16 border border-mu-border/30 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300">
+                <div class="flex-1 flex justify-center items-center w-full relative">
+                    <!-- Subtle background circle behind image -->
+                    <div class="absolute inset-0 bg-yellow-400/5 rounded-full scale-75 blur-2xl"></div>
                     <img src="/images/features/imagef_5.png" alt="نظام نقاط البيع المتكامل"
-                        class="w-full max-w-[420px] object-contain" />
+                        class="w-full max-w-[400px] object-contain relative z-10 drop-shadow-sm hover:-translate-y-2 transition-transform duration-500" />
+                </div>
+
+                <div class="flex-1">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF5EA] text-[#6ea030] text-xs font-bold mb-5 rounded-full">
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        السرعة والكفاءة
+                    </div>
+                    <h2 class="text-2xl md:text-[2.2rem] font-bold text-mu-dark mb-4 leading-tight">نظام نقاط البيع
+                        المتكامل</h2>
+                    <p class="text-mu-gray leading-[1.8] text-[1rem] font-medium mb-8">
+                        احصل على نظام نقاط البيع المتطور الذي يربط بين المنيو الإلكتروني ونظام إدارة المبيعات. يمكنك
+                        إدارة الطلبات، تتبع المبيعات، وإدارة المخزون بسهولة تامة لاتخاذ القرارات الصحيحة بناءً على
+                        تحليلات دقيقة ومتكاملة.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a routerLink="/pricing" fragment="enterprise"
+                            class="inline-flex items-center justify-center bg-mu-primary text-white hover:bg-mu-primary/90 px-8 py-3 rounded-lg font-bold text-[0.95rem] transition-colors">
+                            اشترك في باقة الشركات
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -124,14 +209,14 @@
 </section>
 
 <!-- Advanced Features Grid -->
-<section class="py-20 bg-[#FAFBFA]" dir="rtl">
+<section class="py-20 bg-[#FAFBFA]">
     <div class="container mx-auto px-4 md:px-8 xl:px-16">
         <div class="text-center mb-14">
             <h2 class="text-3xl md:text-4xl font-bold text-mu-dark mb-4">المميزات المتقدمة</h2>
             <p class="text-mu-gray text-[1.05rem] font-medium">كل ما تحتاجه لإدارة مطعمك رقمياً في مكان واحد</p>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 max-w-full mx-auto">
 
             <div
                 class="bg-white rounded-2xl p-5 text-center border border-mu-border/20 hover:border-mu-primary/30 hover:shadow-md transition-all duration-300 group">
