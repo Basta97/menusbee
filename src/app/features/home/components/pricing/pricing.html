@@ -1,4 +1,4 @@
-<section class="py-24 bg-white" dir="rtl">
+<section class="py-24 bg-white">
     <div class="container mx-auto px-4 md:px-8 xl:px-16 text-center">
 
         <!-- Section Header -->
@@ -20,7 +20,7 @@
                 [ngClass]="isYearly ? 'bg-mu-primary' : 'bg-[#e2e8f0]'" (click)="toggleBillingCycle()"
                 aria-label="Toggle Billing Cycle">
                 <div class="absolute top-[2px] w-6 h-6 bg-white rounded-full transition-all duration-300 ease-in-out shadow-sm border border-gray-100"
-                    [style.right]="isYearly ? '2px' : 'calc(100% - 26px)'">
+                    [style.right]="!isYearly ? '2px' : 'calc(100% - 26px)'">
                 </div>
             </button>
 
