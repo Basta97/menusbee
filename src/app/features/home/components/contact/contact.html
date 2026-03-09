@@ -17,21 +17,31 @@
 
             <!-- LEFT PANEL: Contact Information (Green Box) -->
             <div
-                class="lg:w-1/3 bg-[#8CC63F] rounded-2xl p-8 md:p-10 flex flex-col shadow-lg shadow-[#8CC63F]/20 relative overflow-hidden">
-                <h3 class="text-2xl font-bold text-white mb-10 text-center">نحن هنا لمساعدتك</h3>
+                class="lg:w-1/3 bg-linear-to-b from-[#8CC63F] to-[#75A536] rounded-3xl p-8 md:p-10 flex flex-col shadow-xl shadow-[#8CC63F]/30 relative overflow-hidden text-center md:text-right">
 
-                <div class="space-y-6 flex-1">
+                <!-- Decorative background elements -->
+                <div
+                    class="absolute top-0 right-0 w-full h-[500px] bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40 z-0 pointer-events-none">
+                </div>
+                <div
+                    class="absolute -bottom-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none">
+                </div>
+
+                <h3 class="text-2xl font-bold text-white mb-8 text-center relative z-10">نحن هنا لمساعدتك</h3>
+
+                <div class="space-y-4 flex-1 relative z-10">
                     <!-- Phone -->
                     <div
-                        class="bg-white/10 hover:bg-white/20 transition-colors duration-300 rounded-xl p-4 flex items-center justify-between group cursor-pointer backdrop-blur-sm">
+                        class="bg-white/10 hover:bg-white/20 transition-all duration-300 rounded-2xl p-4 flex items-center justify-between group cursor-pointer backdrop-blur-md border border-white/10 hover:-translate-y-1">
                         <div class="text-right">
-                            <h4 class="text-white font-bold mb-1 text-lg">الهاتف</h4>
-                            <p class="text-white/90 text-left font-sans font-medium" dir="ltr">+21040991525</p>
+                            <h4 class="text-white font-bold mb-1 text-[1.05rem]">الهاتف</h4>
+                            <p class="text-white/90 text-left font-sans font-medium text-sm" dir="ltr">+210 4099 1525
+                            </p>
                         </div>
                         <div
-                            class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300">
+                            class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 group-hover:bg-mu-light">
                             <!-- Phone Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
                                 fill="none" stroke="#8CC63F" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path
@@ -43,15 +53,16 @@
 
                     <!-- WhatsApp -->
                     <div
-                        class="bg-white/10 hover:bg-white/20 transition-colors duration-300 rounded-xl p-4 flex items-center justify-between group cursor-pointer backdrop-blur-sm">
+                        class="bg-white/10 hover:bg-white/20 transition-all duration-300 rounded-2xl p-4 flex items-center justify-between group cursor-pointer backdrop-blur-md border border-white/10 hover:-translate-y-1">
                         <div class="text-right">
-                            <h4 class="text-white font-bold mb-1 text-lg">واتس اب</h4>
-                            <p class="text-white/90 text-left font-sans font-medium" dir="ltr">+201094471044</p>
+                            <h4 class="text-white font-bold mb-1 text-[1.05rem]">واتس اب</h4>
+                            <p class="text-white/90 text-left font-sans font-medium text-sm" dir="ltr">+20 109 447 1044
+                            </p>
                         </div>
                         <div
-                            class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300">
+                            class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 group-hover:bg-mu-light">
                             <!-- WhatsApp Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
                                 fill="none" stroke="#8CC63F" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path
@@ -63,15 +74,16 @@
 
                     <!-- Email -->
                     <div
-                        class="bg-white/10 hover:bg-white/20 transition-colors duration-300 rounded-xl p-4 flex items-center justify-between group cursor-pointer backdrop-blur-sm">
+                        class="bg-white/10 hover:bg-white/20 transition-all duration-300 rounded-2xl p-4 flex items-center justify-between group cursor-pointer backdrop-blur-md border border-white/10 hover:-translate-y-1">
                         <div class="text-right">
-                            <h4 class="text-white font-bold mb-1 text-lg">البريد الإلكتروني</h4>
-                            <p class="text-white/90 text-left font-sans font-medium" dir="ltr">Hi&#64;menusbee.com</p>
+                            <h4 class="text-white font-bold mb-1 text-[1.05rem]">البريد الإلكتروني</h4>
+                            <p class="text-white/90 text-left font-sans font-medium text-sm" dir="ltr">
+                                Hi&#64;menusbee.com</p>
                         </div>
                         <div
-                            class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300">
+                            class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 group-hover:bg-mu-light">
                             <!-- Email Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
                                 fill="none" stroke="#8CC63F" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
@@ -83,11 +95,11 @@
                 </div>
 
                 <!-- Social Links -->
-                <div class="mt-12 flex flex-col items-center">
-                    <h4 class="text-white font-bold text-xl mb-4">تابعنا على</h4>
-                    <div class="flex items-center gap-3">
+                <div class="mt-10 pt-8 border-t border-white/20 flex flex-col items-center relative z-10 w-full mb-2">
+                    <h4 class="text-white font-semibold text-lg mb-4 opacity-90">تابعنا على</h4>
+                    <div class="flex items-center justify-center gap-4">
                         <a href="#"
-                            class="w-10 h-10 border border-white/40 rounded-lg flex items-center justify-center text-white hover:bg-white hover:text-[#8CC63F] transition-all overflow-hidden relative group">
+                            class="w-11 h-11 bg-white/10 border border-white/20 shadow-sm rounded-full flex items-center justify-center text-white hover:bg-white hover:text-[#8CC63F] hover:shadow-md transition-all duration-300 relative group hover:-translate-y-1">
                             <!-- TikTok -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -96,7 +108,7 @@
                             </svg>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 border border-white/40 rounded-lg flex items-center justify-center text-white hover:bg-white hover:text-[#8CC63F] transition-all overflow-hidden relative group">
+                            class="w-11 h-11 bg-white/10 border border-white/20 shadow-sm rounded-full flex items-center justify-center text-white hover:bg-white hover:text-[#8CC63F] hover:shadow-md transition-all duration-300 relative group hover:-translate-y-1">
                             <!-- Instagram -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -107,7 +119,7 @@
                             </svg>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 border border-white/40 rounded-lg flex items-center justify-center text-white hover:bg-white hover:text-[#8CC63F] transition-all overflow-hidden relative group">
+                            class="w-11 h-11 bg-white/10 border border-white/20 shadow-sm rounded-full flex items-center justify-center text-white hover:bg-white hover:text-[#8CC63F] hover:shadow-md transition-all duration-300 relative group hover:-translate-y-1">
                             <!-- Facebook -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -121,31 +133,46 @@
 
             <!-- RIGHT PANEL: Contact Form -->
             <div
-                class="lg:w-2/3 bg-white rounded-2xl p-8 md:p-12 shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-100 flex-1">
-                <form class="space-y-6">
+                class="lg:w-2/3 bg-white rounded-3xl p-8 md:p-12 shadow-[0_15px_50px_rgba(0,0,0,0.06)] border border-gray-50 flex-1 relative">
 
-                    <!-- Name Input -->
-                    <div>
-                        <label class="block text-mu-dark font-bold mb-2 text-right">الاسم <span
-                                class="text-red-500">*</span></label>
-                        <input type="text" placeholder="اكتب اسمك كاملاً"
-                            class="w-full bg-[#f8fafc] border border-gray-200 rounded-xl px-4 py-3.5 text-right focus:outline-none focus:ring-2 focus:ring-mu-primary focus:border-transparent transition-all placeholder:text-gray-400">
+                <!-- Decorative background blob -->
+                <div
+                    class="absolute top-0 right-0 w-64 h-64 bg-slate-50 rounded-bl-full -z-10 pointer-events-none opacity-50">
+                </div>
+
+                <form class="space-y-6 relative z-10">
+
+                    <!-- Content Header inside form -->
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-mu-dark mb-2">أرسل لنا رسالة</h3>
+                        <p class="text-mu-gray text-sm font-medium">نرجو تعبئة النموذج أدناه وسيقوم أحد ممثلينا بالتواصل
+                            معك في أقرب وقت.</p>
                     </div>
 
-                    <!-- Email Input -->
-                    <div>
-                        <label class="block text-mu-dark font-bold mb-2 text-right">البريد الإلكتروني <span
-                                class="text-red-500">*</span></label>
-                        <input type="email" placeholder="example@email.com" dir="ltr"
-                            class="w-full bg-[#f8fafc] border border-gray-200 rounded-xl px-4 py-3.5 text-left focus:outline-none focus:ring-2 focus:ring-mu-primary focus:border-transparent transition-all placeholder:text-gray-400">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Name Input -->
+                        <div>
+                            <label class="block text-mu-dark font-bold mb-2 text-sm text-right">الاسم <span
+                                    class="text-red-500">*</span></label>
+                            <input type="text" placeholder="اكتب اسمك كاملاً"
+                                class="w-full bg-[#FAFBFA] border border-gray-200 rounded-xl px-4 py-3.5 text-right focus:outline-none focus:ring-2 focus:ring-mu-primary focus:border-transparent focus:bg-white transition-all placeholder:text-gray-400/80 shadow-sm text-sm">
+                        </div>
+
+                        <!-- Email Input -->
+                        <div>
+                            <label class="block text-mu-dark font-bold mb-2 text-sm text-right">البريد الإلكتروني <span
+                                    class="text-red-500">*</span></label>
+                            <input type="email" placeholder="example@email.com" dir="ltr"
+                                class="w-full bg-[#FAFBFA] border border-gray-200 rounded-xl px-4 py-3.5 text-left focus:outline-none focus:ring-2 focus:ring-mu-primary focus:border-transparent focus:bg-white transition-all placeholder:text-gray-400/80 shadow-sm text-sm">
+                        </div>
                     </div>
 
                     <!-- Phone Input with Prefix -->
                     <div>
-                        <label class="block text-mu-dark font-bold mb-2 text-right">رقم الهاتف <span
+                        <label class="block text-mu-dark font-bold mb-2 text-sm text-right">رقم الهاتف <span
                                 class="text-red-500">*</span></label>
                         <!-- A flex container to hold the prefix dropdown/flag and the input together -->
-                        <div class="flex items-center bg-[#f8fafc] border border-gray-200 rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-mu-primary focus-within:border-transparent transition-all"
+                        <div class="flex items-center bg-[#FAFBFA] border border-gray-200 rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-mu-primary focus-within:border-transparent focus-within:bg-white transition-all shadow-sm"
                             dir="ltr">
                             <div
                                 class="flex items-center gap-2 px-4 py-3.5 border-r border-gray-200 bg-[#f1f5f9] cursor-pointer hover:bg-gray-200 transition-colors">
@@ -162,24 +189,31 @@
                                 <span class="text-sm font-bold text-gray-700">+20</span>
                             </div>
                             <input type="tel" placeholder="1234567890"
-                                class="flex-1 bg-transparent px-4 py-3.5 text-left focus:outline-none placeholder:text-gray-400">
+                                class="flex-1 bg-transparent px-4 py-3.5 text-left focus:outline-none placeholder:text-gray-400/80 text-sm">
                         </div>
                     </div>
 
                     <!-- Message Input -->
                     <div>
-                        <label class="block text-mu-dark font-bold mb-2 text-right">كيف يمكننا مساعدتك؟ <span
+                        <label class="block text-mu-dark font-bold mb-2 text-sm text-right">كيف يمكننا مساعدتك؟ <span
                                 class="text-red-500">*</span></label>
-                        <textarea rows="4" placeholder="اكتب رسالتك أو استفسارك هنا..."
-                            class="w-full bg-[#f8fafc] border border-gray-200 rounded-xl px-4 py-3.5 text-right focus:outline-none focus:ring-2 focus:ring-mu-primary focus:border-transparent transition-all placeholder:text-gray-400 resize-y"></textarea>
+                        <textarea rows="5" placeholder="اكتب رسالتك أو استفسارك هنا..."
+                            class="w-full bg-[#FAFBFA] border border-gray-200 rounded-xl px-4 py-3.5 text-right focus:outline-none focus:ring-2 focus:ring-mu-primary focus:border-transparent focus:bg-white transition-all placeholder:text-gray-400/80 shadow-sm resize-y text-sm"></textarea>
                     </div>
 
                     <!-- Submit Button -->
                     <button type="submit"
-                        class="w-full bg-[#75A536] hover:bg-mu-primary text-white font-bold py-4 px-6 rounded-xl transition-colors duration-300 shadow-lg shadow-mu-primary/20 mt-4">
-                        إرسال الرسالة
+                        class="w-full bg-linear-to-r from-mu-primary to-[#67912f] hover:from-[#7eae35] hover:to-[#5c822a] text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-xl shadow-mu-primary/30 mt-6 md:w-auto md:min-w-[200px] float-left flex items-center justify-center gap-2 group">
+                        <span>إرسال الرسالة</span>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="w-5 h-5 -scale-x-100 group-hover:translate-x-1 transition-transform" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
                     </button>
-
+                    <!-- clearfix -->
+                    <div class="clear-both"></div>
                 </form>
             </div>
 

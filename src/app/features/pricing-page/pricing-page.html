@@ -1,14 +1,40 @@
 <!-- Hero Section -->
-<section class="py-20 bg-gradient-to-b from-mu-light to-white" dir="rtl">
-    <div class="container mx-auto px-4 md:px-8 xl:px-16 text-center">
-        <h1 class="text-3xl md:text-5xl font-bold text-mu-dark mb-4">
-            باقات <span class="text-mu-primary">منيوبي</span>
+<section class="relative pt-32 pb-20 bg-gradient-to-br from-[#f8fafc] via-white to-[#f0fdf4] overflow-hidden" dir="rtl">
+    <!-- Decorative Shapes -->
+    <div
+        class="absolute top-0 right-0 w-full h-[500px] bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%238cc63f\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-70 z-0 pointer-events-none">
+    </div>
+    <div
+        class="absolute -right-20 top-20 w-96 h-96 bg-mu-primary/10 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob pointer-events-none">
+    </div>
+    <div
+        class="absolute -left-20 top-40 w-96 h-96 bg-mu-light/80 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000 pointer-events-none">
+    </div>
+
+    <div class="container mx-auto px-4 md:px-8 xl:px-16 text-center relative z-10">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-mu-border shadow-sm mb-6 max-w-max mx-auto zoom-in"
+            style="animation-duration: 0.5s;">
+            <span class="relative flex h-3 w-3">
+                <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-mu-primary opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-mu-primary"></span>
+            </span>
+            <span class="text-sm font-semibold text-mu-dark">أسعار تناسب جميع الأعمال</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-mu-dark mb-6 tracking-tight fade-up">
+            باقات <span
+                class="text-transparent bg-clip-text bg-gradient-to-l from-mu-primary to-[#22c55e]">منيوبي</span>
         </h1>
-        <p class="text-mu-gray text-[1.05rem] md:text-[1.15rem] font-medium max-w-2xl mx-auto leading-relaxed">
-            اختر الباقة الأنسب لمشروعك وابدأ الان ببناء منيو إلكتروني ذكي لمطعمك
+        <p
+            class="text-mu-gray text-lg md:text-xl font-medium max-w-3xl mx-auto leading-relaxed fade-up animation-delay-100">
+            اختر الباقة الأنسب لمشروعك وابدأ الان ببناء منيو إلكتروني ذكي لمطعمك، بدون أي عمولات خفية.
         </p>
     </div>
 </section>
 
 <!-- Pricing Component from Home -->
-<app-pricing></app-pricing>
+<div class="relative z-20 -mt-10 bg-transparent">
+    <app-pricing></app-pricing>
+</div>
