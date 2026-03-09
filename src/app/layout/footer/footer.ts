@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { QrCta } from "../../features/home/components/qr-cta/qr-cta";
+import { QrCto } from "../../shared/common/qr-cto/qr-cto";
 
 @Component({
   selector: 'app-footer',
-  imports: [QrCta],
+  imports: [QrCto],
   templateUrl: './footer.html',
   styleUrl: './footer.css',
 })
