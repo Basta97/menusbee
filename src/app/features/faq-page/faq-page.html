@@ -1,5 +1,5 @@
 <!-- Header & Search Section -->
-<section class="py-16 bg-white" dir="rtl">
+<section class="py-24 bg-white" dir="rtl">
     <div class="container mx-auto px-4 md:px-8 xl:px-16 text-center max-w-4xl">
         <h1 class="text-3xl md:text-5xl font-black text-mu-dark mb-4">
             الأسئلة الشائعة
@@ -32,7 +32,7 @@
             <button (click)="setCategory(category.id)" [class.border-mu-primary]="activeCategory === category.id"
                 [class.border-gray-100]="activeCategory !== category.id"
                 [class.shadow-md]="activeCategory === category.id" [class.shadow-sm]="activeCategory !== category.id"
-                class="bg-white border-2 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 hover:border-mu-primary/50 transition-all duration-300 hover:-translate-y-1">
+                class="bg-white border-2 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 hover:border-mu-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
 
                 <!-- Icon Circle -->
                 <div [class]="category.bgColor + ' ' + category.textColor"
