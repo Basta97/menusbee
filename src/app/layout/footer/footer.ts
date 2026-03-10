@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { QrCto } from "../../shared/common/qr-cto/qr-cto";
 
 @Component({
@@ -9,6 +11,15 @@ import { QrCto } from "../../shared/common/qr-cto/qr-cto";
 })
 export class Footer {
   isChatOpen: boolean = false;
+  isPricingPage: boolean = false;
+
+  constructor(private router: Router) {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      this.isPricingPage = event.urlAfterRedirects.includes('/pricing');
+    });
+  }
 
   toggleChat(event?: Event) {
     if (event) {
